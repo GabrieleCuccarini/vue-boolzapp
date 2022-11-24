@@ -25,14 +25,6 @@
     width: 25vw;    
 }
 
-.area-chat {
-    background-color: aquamarine;
-}
-
-.area-user-friends>*{
-    border: 1px solid black
-}
-
 .name-foto-container {
     background-color: rgb(234,234,234);
     padding: 10px
@@ -42,7 +34,7 @@
     border-radius: 50%;
 }
 
-.icons-container i {
+.area-user-friends .icons-container i {
     font-size: 25px;
     padding: 0 5px;
     color: rgb(177,177,177)
@@ -90,4 +82,41 @@
 
 small {
     color: rgb(191,191,191);
+}
+
+.area-chat .name-foto-container {
+    height: 60px;
+    border-left: 1px solid lightgrey;
+}
+
+.area-chat .name-foto-container h5 {
+    margin: 0;
+}
+
+.big-chat-container {
+    background-image: url(../img/mine.jpg);
+}
+
+.write-chat-container {
+    background-color: rgb(243,238,234);
+}
+
+.write-chat-container .icons-container {
+    flex-basis: 10%;
+    margin: 0 auto;
+}
+
+.write-chat-container .input-container {
+    flex-basis: 80%;
+    margin: 0 auto;
+}
+
+.write-chat-container input {
+    width: 100%;
+}
+
+.area-chat .name-foto-container .icons-container i {
+    font-size: 25px;
+    padding: 0 5px;
+    color: rgb(177,177,177)
 }
