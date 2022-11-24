@@ -99,6 +99,7 @@ small {
 
 .write-chat-container {
     background-color: rgb(243,238,234);
+    padding: 10px 0;
 }
 
 .write-chat-container .icons-container {
@@ -113,6 +114,8 @@ small {
 
 .write-chat-container input {
     width: 100%;
+    padding: 10px 0 10px 15px;
+    border: none;
 }
 
 .area-chat .name-foto-container .icons-container i {
@@ -120,3 +123,9 @@ small {
     padding: 0 5px;
     color: rgb(177,177,177)
 }
+
+.write-chat-container .icons-container i {
+    font-size: 25px;
+    color: rgb(177,177,177)
+}
+
