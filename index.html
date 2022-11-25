@@ -69,7 +69,7 @@
                             <img :src="datiUtenti[index].avatar" alt="img-friend">
                             <div class="text-container">
                                 <h5>{{datiUtenti[index].name}}</h5>
-                                <small>Ultimo messaggio oggi alle 12:00</small>
+                                <small>Ultimo messaggio oggi alle {{datiUtenti[index].messages[datiUtenti[index].messages.length - 1].date}}</small>
                             </div>
                         </div>
                         <div class="icons-container">

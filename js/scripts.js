@@ -44,7 +44,13 @@ createApp({
                 date: '20/03/2020 16:35:00',
                 message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                 status: 'sent'
-              }
+              },
+              {
+                date: '20/03/2020 16:40:25',
+                message: 'Niente allora, sarà per un\'altra volta',
+                status: 'received'
+              },
+
               ],
             },
             {
@@ -78,7 +84,7 @@ createApp({
                 status: 'sent',
               },
               {
-                date: '10/01/2020 15:50:00',
+                date: '10/01/2020 15:50:32',
                 message: 'Si, ma preferirei andare al cinema',
                 status: 'received'
               }
@@ -94,7 +100,7 @@ createApp({
                 status: 'sent',
               },
               {
-                date: '10/01/2020 15:50:00',
+                date: '10/01/2020 15:40:20',
                 message: 'Mah, giornata abbastanza pesante. Tu?',
                 status: 'received'
               }
@@ -110,7 +116,7 @@ createApp({
                 status: 'sent',
               },
               {
-                date: '10/01/2020 15:50:00',
+                date: '10/01/2020 16:52:12',
                 message: 'Figo, come si chiama?',
                 status: 'received'
               }
@@ -126,7 +132,7 @@ createApp({
                 status: 'sent',
               },
               {
-                date: '10/01/2020 15:50:00',
+                date: '10/01/2020 17:50:23',
                 message: 'Daje, volentieri',
                 status: 'received'
               }
@@ -142,7 +148,7 @@ createApp({
                 status: 'sent',
               },
               {
-                date: '10/01/2020 15:50:00',
+                date: '10/01/2020 15:34:52',
                 message: 'Si, ma voglio andare al giapponese',
                 status: 'received'
               }
