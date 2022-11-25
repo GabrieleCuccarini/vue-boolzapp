@@ -155,7 +155,10 @@ createApp({
               ]
             },                        
           
-          ], 
+          ],
+        newMessage: {
+          message: '',
+        },
          activeFriend: null,
          index: 0      
         }
@@ -166,6 +169,17 @@ createApp({
         this.activeFriend = this.datiUtenti[i]
         this.index = i
         },
+        inputEnter (index) {
+          const today = new Date()
+          let actualTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+          this.datiUtenti[index].messages.push({
+          date: '10/01/2020' + " " + actualTime,
+          message: this.newMessage.message,
+          status: 'sent'
+          })
+          this.newMessage.message = ''
+          console.log("Pressed enter",this.newMessage, index)
+        }
       },
       beforeMount () {
         this.activeFriend = this.datiUtenti[0]
