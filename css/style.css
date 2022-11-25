@@ -16,8 +16,7 @@
     background-color: white;
     z-index: 3;
     margin: 0rem auto;
-    top: 50px;
-    width: 70vw;
+    top: 8vh;
     height: 85vh;
     position: relative;
 }
@@ -33,6 +32,10 @@
 .name-foto-container img {
     width: 40px;
     border-radius: 50%;
+}
+
+.friends {
+    padding: 0 10px;
 }
 
 .area-user-friends .icons-container i {
@@ -56,10 +59,10 @@
 
 .desktop-notify i {
     font-size: 30px;
-    margin: 10px;
     background-color: white;
     border-radius: 50%;
-    color: rgb(142,218,252);;
+    color: rgb(142,218,252);
+    margin-right: 10px;
 }
 
 .search-chat {

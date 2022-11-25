@@ -19,8 +19,8 @@
 
         <div class="general-container">
             <div class="up-bar"></div>
-            <div class="my-container d-flex">
-                <div class="area-user-friends d-flex flex-column">
+            <div class="container px-0 my-container d-flex">
+                <div class="area-user-friends d-flex flex-column flex-shrink-0">
                     <div class="name-foto-container d-flex align-items-center justify-content-between">
                         <div class="foto-container d-flex align-items-center">
                             <img src="img/avatar_io.jpg" alt="">
@@ -47,10 +47,10 @@
                     </div>
 
                     <div class="friends d-flex flex-column flex-fill overflow-auto">
-                        <div v-for="(friendcard, i) in datiUtenti" class="friend flex-fill d-flex align-items-center"
+                        <div v-for="(friendcard, i) in datiUtenti" :key="i + friendcard.name" class="friend flex-fill d-flex align-items-center"
                          @click="setActiveFriend(i)" :class="friendcard.friendActive ? 'active-friend' : ''">
                             <div class="img-container">
-                                <img :src="datiUtenti[i].avatar" alt="">
+                                <img :src="friendcard.avatar" alt="">
                             </div>
                             <div class="text-time-container d-flex justify-content-between flex-fill">
                                 <div class="text-container">
