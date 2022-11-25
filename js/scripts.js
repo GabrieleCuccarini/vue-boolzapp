@@ -8,8 +8,8 @@ createApp({
               name: 'Michele',
               avatar: "img/avatar_1.jpg",
               visible: true,
-              friendActive: false,
-              messages: [{
+              messages: [
+                {
                 date: '10/01/2020 15:30:55',
                 message: 'Hai portato a spasso il cane?',
                 status: 'sent',               
@@ -30,7 +30,6 @@ createApp({
               name: 'Fabio',
               avatar: "img/avatar_2.jpg",
               visible: true,
-              friendActive: false,
               messages: [{
                 date: '20/03/2020 16:30:00',
                 message: 'Ciao come stai?',
@@ -44,7 +43,7 @@ createApp({
               {
                 date: '20/03/2020 16:35:00',
                 message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                status: 'received'
+                status: 'sent'
               }
               ],
             },
@@ -52,7 +51,6 @@ createApp({
               name: 'Samuele',
               avatar: "img/avatar_3.jpg",
               visible: true,
-              friendActive: false,
               messages: [{
                 date: '28/03/2020 10:10:40',
                 message: 'La Marianna va in campagna',
@@ -74,7 +72,6 @@ createApp({
               name: 'Alessandro B',
               avatar: "img/avatar_4.jpg",
               visible: true,
-              friendActive: false,
               messages: [{
                 date: '10/01/2020 15:30:55',
                 message: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -91,15 +88,14 @@ createApp({
               name: 'Alessandro L',
               avatar: "img/avatar_5.jpg",
               visible: true,
-              friendActive: false,
               messages: [{
                 date: '10/01/2020 15:30:55',
-                message: 'Lo sai che ha aperto una nuova pizzeria?',
+                message: 'Ehi, come stai?',
                 status: 'sent',
               },
               {
                 date: '10/01/2020 15:50:00',
-                message: 'Si, ma preferirei andare al cinema',
+                message: 'Mah, giornata abbastanza pesante. Tu?',
                 status: 'received'
               }
               ]
@@ -108,15 +104,14 @@ createApp({
               name: 'Claudia',
               avatar: "img/avatar_6.jpg",
               visible: true,
-              friendActive: false,
               messages: [{
                 date: '10/01/2020 15:30:55',
-                message: 'Lo sai che ha aperto una nuova pizzeria?',
+                message: 'Ho comprato un nuovo gioco da tavolo',
                 status: 'sent',
               },
               {
                 date: '10/01/2020 15:50:00',
-                message: 'Si, ma preferirei andare al cinema',
+                message: 'Figo, come si chiama?',
                 status: 'received'
               }
               ]
@@ -125,15 +120,14 @@ createApp({
               name: 'Federico',
               avatar:"img/avatar_7.jpg",
               visible: true,
-              friendActive: false,
               messages: [{
                 date: '10/01/2020 15:30:55',
-                message: 'Lo sai che ha aperto una nuova pizzeria?',
+                message: 'Calcettino stasera?',
                 status: 'sent',
               },
               {
                 date: '10/01/2020 15:50:00',
-                message: 'Si, ma preferirei andare al cinema',
+                message: 'Daje, volentieri',
                 status: 'received'
               }
               ]
@@ -142,7 +136,6 @@ createApp({
               name: 'Davide',
               avatar: "img/avatar_8.jpg",
               visible: true,
-              friendActive: false,
               messages: [{
                 date: '10/01/2020 15:30:55',
                 message: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -150,23 +143,25 @@ createApp({
               },
               {
                 date: '10/01/2020 15:50:00',
-                message: 'Si, ma preferirei andare al cinema',
+                message: 'Si, ma voglio andare al giapponese',
                 status: 'received'
               }
               ]
             },                        
           
-          ],            
+          ], 
+         activeFriend: null,
+         index: 0      
         }
     },
     methods: {
       setActiveFriend(i){
-        // this.datiUtenti.forEach(element => {
-        //     element.friendActive === false
-        //     console.log(element.friendActive)
-        // })
-          this.datiUtenti[i].friendActive = !this.datiUtenti[i].friendActive
-          console.log(this.datiUtenti[i].friendActive)
+        console.log(this.activeFriend, this.index)
+        this.activeFriend = this.datiUtenti[i]
+        this.index = i
         },
-    }
+      },
+      beforeMount () {
+        this.activeFriend = this.datiUtenti[0]
+      },
 }).mount("#app")

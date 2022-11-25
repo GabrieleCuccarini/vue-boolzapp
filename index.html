@@ -47,10 +47,10 @@
                     </div>
 
                     <div class="friends d-flex flex-column flex-fill overflow-auto">
-                        <div v-for="(friendcard, i) in datiUtenti" :key="i + friendcard.name" class="friend flex-fill d-flex align-items-center"
-                         @click="setActiveFriend(i)" :class="friendcard.friendActive ? 'active-friend' : ''">
+                        <div class="friend flex-fill d-flex align-items-center" :class="{ 'active-friend': activeFriend == friendcard }"
+                        @click= "setActiveFriend(i)" v-for="(friendcard, i) in datiUtenti" :key="i + friendcard.name">
                             <div class="img-container">
-                                <img :src="friendcard.avatar" alt="">
+                                <img :src="friendcard.avatar" alt="img-friend">
                             </div>
                             <div class="text-time-container d-flex justify-content-between flex-fill">
                                 <div class="text-container">
@@ -60,99 +60,15 @@
                                 <small class="time-container">12:00</small>
                             </div>                           
                         </div>
-                        <!-- <div class="friend flex-fill d-flex align-items-center bg-light">
-                            <div class="img-container">
-                                <img src="img/avatar_2.jpg" alt="">
-                            </div>
-                            <div class="text-time-container d-flex justify-content-between flex-fill">
-                                <div class="text-container">
-                                    <h5>Fabio</h5>
-                                    <small>Ultimo messaggio inviato</small>
-                                </div>
-                                <small class="time-container">12:00</small>
-                            </div>                           
-                        </div>
-                        <div class="friend flex-fill d-flex align-items-center bg-light">
-                            <div class="img-container">
-                                <img src="img/avatar_3.jpg" alt="">
-                            </div>
-                            <div class="text-time-container d-flex justify-content-between flex-fill">
-                                <div class="text-container">
-                                    <h5>Samuele</h5>
-                                    <small>Ultimo messaggio inviato</small>
-                                </div>
-                                <small class="time-container">12:00</small>
-                            </div>                           
-                        </div>
-                        <div class="friend flex-fill d-flex align-items-center bg-light">
-                            <div class="img-container">
-                                <img src="img/avatar_4.jpg" alt="">
-                            </div>
-                            <div class="text-time-container d-flex justify-content-between flex-fill">
-                                <div class="text-container">
-                                    <h5>Alessandro B</h5>
-                                    <small>Ultimo messaggio inviato</small>
-                                </div>
-                                <small class="time-container">12:00</small>
-                            </div>                           
-                        </div>
-                        <div class="friend flex-fill d-flex align-items-center bg-light">
-                            <div class="img-container">
-                                <img src="img/avatar_5.jpg" alt="">
-                            </div>
-                            <div class="text-time-container d-flex justify-content-between flex-fill">
-                                <div class="text-container">
-                                    <h5>Alessandro L</h5>
-                                    <small>Ultimo messaggio inviato</small>
-                                </div>
-                                <small class="time-container">12:00</small>
-                            </div>                           
-                        </div>
-                        <div class="friend flex-fill d-flex align-items-center bg-light">
-                            <div class="img-container">
-                                <img src="img/avatar_6.jpg" alt="">
-                            </div>
-                            <div class="text-time-container d-flex justify-content-between flex-fill">
-                                <div class="text-container">
-                                    <h5>Claudia</h5>
-                                    <small>Ultimo messaggio inviato</small>
-                                </div>
-                                <small class="time-container">12:00</small>
-                            </div>                           
-                        </div>
-                        <div class="friend flex-fill d-flex align-items-center bg-light">
-                            <div class="img-container">
-                                <img src="img/avatar_7.jpg" alt="">
-                            </div>
-                            <div class="text-time-container d-flex justify-content-between flex-fill">
-                                <div class="text-container">
-                                    <h5>Federico</h5>
-                                    <small>Ultimo messaggio inviato</small>
-                                </div>
-                                <small class="time-container">12:00</small>
-                            </div>                           
-                        </div>   
-                        <div class="friend flex-fill d-flex align-items-center bg-light">
-                            <div class="img-container">
-                                <img src="img/avatar_8.jpg" alt="">
-                            </div>
-                            <div class="text-time-container d-flex justify-content-between flex-fill">
-                                <div class="text-container">
-                                    <h5>Davide</h5>
-                                    <small>Ultimo messaggio inviato</small>
-                                </div>
-                                <small class="time-container">12:00</small>
-                            </div>                           
-                        </div>                        -->               
                     </div>
                 </div>
                 
                 <div class="area-chat flex-fill d-flex flex-column">
                     <div class="name-foto-container d-flex align-items-center justify-content-between">
                         <div class="foto-container d-flex align-items-center">
-                            <img src="img/avatar_1.jpg" alt="">
+                            <img :src="datiUtenti[index].avatar" alt="img-friend">
                             <div class="text-container">
-                                <h5>Michele</h5>
+                                <h5>{{datiUtenti[index].name}}</h5>
                                 <small>Ultimo messaggio oggi alle 12:00</small>
                             </div>
                         </div>
@@ -164,32 +80,16 @@
                     </div>
 
                     <div class="big-chat-container d-flex flex-column flex-fill overflow-auto">
-                        <span class="cloud-mess sent">
+                        <div class="cloud-mess" v-for="(messageBase) in datiUtenti[index].messages"
+                        :class="(messageBase.status === 'sent') ? 'sentmg' : 'coming'">
+                        <!-- :class="(index == playerActive) ? 'active' : ''" -->
                             <div class="text-container">
-                                {{datiUtenti[0].messages[0].message}}
+                                {{messageBase.message}}
                             </div>
                             <div class="time-container">
-                                <small>{{datiUtenti[0].messages[0].date}}</small>
+                                <small>{{messageBase.date}}</small>
                             </div>
-                        </span>
-
-                        <span class="cloud-mess sent">
-                            <div class="text-container">
-                                {{datiUtenti[0].messages[1].message}}
-                            </div>
-                            <div class="time-container">
-                                <small>{{datiUtenti[0].messages[1].date}}</small>
-                            </div>
-                        </span>
-
-                        <span class="cloud-mess coming">
-                            <div class="text-container">
-                                {{datiUtenti[0].messages[2].message}}
-                            </div>
-                            <div class="time-container">
-                                <small>{{datiUtenti[0].messages[2].date}}</small>
-                            </div>
-                        </span>
+                        </div>
                     </div>
 
                     <div class="write-chat-container d-flex align-items-center">
