@@ -151,7 +151,8 @@ small {
 }
 
 .cloud-mess {
-    margin-top: 1.5rem;
+    margin-top: .9rem;
+    margin-bottom: .5rem;
     position: relative;
     border-radius: 10px;
     align-self: end;

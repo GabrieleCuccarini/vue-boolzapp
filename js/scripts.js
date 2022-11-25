@@ -172,15 +172,21 @@ createApp({
         inputEnter (index) {
           const today = new Date()
           let actualTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+          // Messaggio inviato
           this.datiUtenti[index].messages.push({
           date: '10/01/2020' + " " + actualTime,
           message: this.newMessage.message,
           status: 'sent'
           })
           this.newMessage.message = ''
-          console.log("Pressed enter",this.newMessage, index)
-        }
-      },
+          // Messaggio in risposta
+          this.datiUtenti[index].messages.push({
+            date: '10/01/2020' + " " + actualTime,
+            message: 'Ok',
+            status: 'received'
+            })
+          }
+        },
       beforeMount () {
         this.activeFriend = this.datiUtenti[0]
       },
