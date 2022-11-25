@@ -98,10 +98,10 @@
                         </div>
                         <div class="input-container text-center">
                             <input v-model="newMessage.message" type="text" name="" 
-                            id="" placeholder="Scrivi un messaggio" v-on:keyup.enter="inputEnter(index)">
+                            id="" placeholder="Scrivi un messaggio" v-on:keyup.enter="inputEnter(index), messageIncoming(index)">
                         </div>
                         <div class="icons-container text-center">
-                            <i class="fa-solid fa-microphone" @click="delayTimer"></i>
+                            <i class="fa-solid fa-microphone"></i>
                         </div>
                     </div>
 

@@ -180,14 +180,22 @@ createApp({
           })
           this.newMessage.message = ''
           // Messaggio in risposta
-          this.datiUtenti[index].messages.push({
-            date: '10/01/2020' + " " + actualTime,
-            message: 'Ok',
-            status: 'received'
-            })
-          }
-        },
-      beforeMount () {
+          messageReceivingDelayed(() => {
+              this.datiUtenti[index].messages.push({
+              date: '10/01/2020' + " " + actualTime,
+              message: 'Bella madre',
+              status: 'received',
+              })
+        }, 3500);
+      }
+        //CHIUSURA DEI METHODS
+      }, beforeMount () {
         this.activeFriend = this.datiUtenti[0]
       },
 }).mount("#app")
+// updatePosts: function () {
+//   var self = this;
+//   self.$http.get('api/posts', function(responce, status, request) {
+//     self.posts = responce.data;
+//     setTimeout(function(){ self.updatePosts() }, 2000);
+//   });
