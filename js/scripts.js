@@ -180,13 +180,13 @@ createApp({
           })
           this.newMessage.message = ''
           // Messaggio in risposta
-          messageReceivingDelayed(() => {
+          setTimeout(() => {
               this.datiUtenti[index].messages.push({
               date: '10/01/2020' + " " + actualTime,
-              message: 'Bella madre',
+              message: 'Ok',
               status: 'received',
               })
-        }, 3500);
+        }, 1000);
       }
         //CHIUSURA DEI METHODS
       }, beforeMount () {
