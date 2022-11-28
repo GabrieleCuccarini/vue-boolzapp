@@ -55,9 +55,9 @@
                             <div class="text-time-container d-flex justify-content-between flex-fill">
                                 <div class="text-container">
                                     <h5>{{datiUtenti[i].name}}</h5>
-                                    <small>Ultimo messaggio inviato</small>
+                                    <small>Ultimo messaggio inviato alle {{datiUtenti[i].messages[datiUtenti[i].messages.length - 1].date}}</small>
                                 </div>
-                                <small class="time-container">12:00</small>
+                                <small class="time-container">{{datiUtenti[i].messages[datiUtenti[i].messages.length - 1].date}}</small>
                             </div>                           
                         </div>
                     </div>
@@ -121,6 +121,4 @@ I messaggi nella chat dovranno essere figli di div
 
 :class="{
     'active' : index===playerActive
-}"
-
--->
+}" -->

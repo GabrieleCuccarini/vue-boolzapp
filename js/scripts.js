@@ -171,7 +171,7 @@ createApp({
         },
         inputEnter (index) {
           const today = new Date()
-          let actualTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+          let actualTime = today.getHours().toString().padStart(2, 0) + ":" + today.getMinutes().toString().padStart(2, 0) + ":" + today.getSeconds().toString().padStart(2, 0)
           // Messaggio inviato
           this.datiUtenti[index].messages.push({
           date: '10/01/2020' + " " + actualTime,
@@ -193,9 +193,6 @@ createApp({
         this.activeFriend = this.datiUtenti[0]
       },
 }).mount("#app")
-// updatePosts: function () {
-//   var self = this;
-//   self.$http.get('api/posts', function(responce, status, request) {
-//     self.posts = responce.data;
-//     setTimeout(function(){ self.updatePosts() }, 2000);
-//   });
+// IMPOSTARE LA VARIABILE TRUE OR FALSE FACENDO FOR EACH
+// TRA I CONTATTI: "Se il nome contiene il testo ok, sennò fallo
+// diventare false"
